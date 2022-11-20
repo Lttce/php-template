@@ -1,0 +1,10 @@
+/.git
+/vendor
+/tests
+/config
+.gitignore
+Dockerfile
+Makefile
+composer.json
+composer.lock
+phpstan.neon

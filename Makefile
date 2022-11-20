@@ -1,5 +1,9 @@
 default:
 
+install:
+	docker compose up -d
+	docker exec -it php-web-1 composer install
+
 lint:
 	./vendor/bin/phpstan analyse
 
@@ -12,4 +16,8 @@ cs:
 test:
 	./vendor/bin/phpunit ./tests
 
-.PHONY: default setup lint fmt cs test
+clean:
+	rm -rf ./vendor composer.lock
+	ls -la
+
+.PHONY: default install lint fmt cs test clean
